@@ -1,0 +1,40 @@
+{
+	"name": "instasearch",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "wp-scripts build",
+		"copy_build": "docker cp ./build 5126b66a36d1:/var/www/html/wp-content/plugins/instasearch",
+		"copy_php": "docker cp ./instasearch.php 5126b66a36d1:/var/www/html/wp-content/plugins/instasearch",
+		"deploy": "npm run build && npm run copy_build && npm run copy_php",
+		"check-engines": "wp-scripts check-engines",
+		"check-licenses": "wp-scripts check-licenses",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js --fix",
+		"lint:md:docs": "wp-scripts lint-md-docs",
+		"lint:md:js": "wp-scripts lint-md-js",
+		"lint:pkg-json": "wp-scripts lint-pkg-json",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"start": "wp-scripts start"
+	},
+	"author": "Manish Kumar",
+	"license": "ISC",
+	"devDependencies": {
+		"@wordpress/scripts": "^24.6.0"
+	},
+	"dependencies": {
+		"@emotion/react": "^11.10.5",
+		"@emotion/styled": "^11.10.5",
+		"@fontsource/roboto": "^4.5.8",
+		"@mui/icons-material": "^5.10.15",
+		"@mui/material": "^5.10.15",
+		"@mui/styled-engine-sc": "^5.10.14",
+		"@wordpress/data": "^7.6.0",
+		"@wordpress/element": "^4.20.0",
+		"react": "^18.2.0",
+		"styled-components": "^5.3.6"
+	}
+}
